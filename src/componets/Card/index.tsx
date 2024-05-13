@@ -40,13 +40,8 @@ const TodoApp: React.FC = () => {
   };
 
   const deleteTodo = (id: number): void => {
-    const confirmed = window.confirm(
-      "Are you sure you want to delete this todo?"
-    );
-    if (confirmed) {
-      const updatedTodos = todos.filter((todo) => todo.id !== id);
-      setTodos(updatedTodos);
-    }
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(updatedTodos);
   };
 
   const editTodo = (todo: Todo): void => {
@@ -77,7 +72,7 @@ const TodoApp: React.FC = () => {
   return (
     <div>
       <div className="containerr">
-        <h1 className="text-5xl uppercase text-center pt-10 mb-10">
+        <h1 className="text-5xl font-bold uppercase text-center pt-10 mb-10">
           Todo List
         </h1>
         <div className="Todo">
@@ -139,7 +134,7 @@ const TodoApp: React.FC = () => {
                           onChange={() => checkTodo(todo.id)}
                         />
                         <p
-                          className="inline-block tetx-xl "
+                          className="inline-block text-xl "
                           style={{
                             textDecoration: todo.completed
                               ? "line-through"
